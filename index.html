@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aroha Fresh — Pure • Fresh • Natural</title>
+  <meta name="description" content="Aroha Fresh is a 17‑acre farm bringing pure, fresh milk from cows and buffaloes to your home by 6:00 AM. All ordering happens in the Aroha Fresh app." />
+  <meta name="theme-color" content="#2AB673" />
+  <meta property="og:title" content="Aroha Fresh — Pure • Fresh • Natural" />
+  <meta property="og:description" content="Farm to Home, Every Morning. App‑first subscriptions for toned & full‑cream milk." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=1200&auto=format&fit=crop" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: { primary: '#2AB673', secondary: '#FFC44D', mint: '#EAFBF3', dark: '#0E3B2E' }
+          },
+          boxShadow: { soft: '0 10px 25px rgba(16, 185, 129, 0.15)' },
+          backgroundImage: { hero: 'radial-gradient(1200px 500px at 20% -10%, rgba(255,255,255,0.9), rgba(255,255,255,0)), radial-gradient(1200px 500px at 120% 10%, rgba(255,255,255,0.7), rgba(255,255,255,0))' }
+        }
+      }
+    }
+  </script>
+  <style>html { scroll-behavior:smooth; }</style>
+</head>
+<body class="bg-brand-mint text-slate-800">
+  <!-- Info strip (no ordering here; info only) -->
+  <!-- <div class="w-full bg-white/70 backdrop-blur sticky top-0 z-50 border-b border-emerald-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-2 text-sm">
+      <p class="flex items-center gap-2"><span class="inline-block w-2 h-2 rounded-full bg-brand-primary"></span> Delivery by <strong class=\"font-semibold\">6:00 AM<\/strong> — App in development; order support via WhatsApp/Call</p>
+      <a href="#app" class="hidden sm:inline-block text-emerald-700 hover:text-emerald-900">Get the App</a>
+    </div>
+  </div> -->
+
+  <!-- Header -->
+  <header class="relative">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3 group">
+        <!-- Replace with your logo asset -->
+        <img src="./assets/WhatsApp Image 2025-09-02 at 12.38.22.jpeg" alt="Aroha Fresh logo" class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow" />
+        <div>
+          <div class="text-xl font-semibold leading-none tracking-tight">Aroha <span class="text-brand-primary">Fresh</span></div>
+          <div class="text-[10px] uppercase tracking-[0.2em] text-emerald-700/70">Pure • Fresh • Natural</div>
+        </div>
+      </a>
+
+      <button id="menuBtn" class="sm:hidden p-2 rounded-md border border-emerald-200" aria-label="Open menu">☰</button>
+
+      <ul id="menu" class="hidden sm:flex items-center gap-6 text-[15px]">
+        <li><a href="#about" class="hover:text-emerald-900">About</a></li>
+        <li><a href="#farm" class="hover:text-emerald-900">Our Farm</a></li>
+        <li><a href="#milk" class="hover:text-emerald-900">Milk</a></li>
+        <li><a href="#process" class="hover:text-emerald-900">Quality</a></li>
+        <li><a href="#roadmap" class="hover:text-emerald-900">Roadmap</a></li>
+        <li><a href="#faq" class="hover:text-emerald-900">FAQs</a></li>
+        <li><a href="#contact" class="hover:text-emerald-900">Contact</a></li>
+        <li><a href="#app" class="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-xl opacity-70 cursor-not-allowed" title="Coming soon">Get the App</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileNav" class="sm:hidden hidden px-4 pb-4">
+      <ul class="grid gap-2 bg-white rounded-xl p-4 border border-emerald-100">
+        <li><a class="block p-2 rounded hover:bg-brand-mint" href="#about">About</a></li>
+        <li><a class="block p-2 rounded hover:bg-brand-mint" href="#farm">Our Farm</a></li>
+        <li><a class="block p-2 rounded hover:bg-brand-mint" href="#milk">Milk</a></li>
+        <li><a class="block p-2 rounded hover:bg-brand-mint" href="#process">Quality</a></li>
+        <li><a class="block p-2 rounded hover:bg-brand-mint" href="#roadmap">Roadmap</a></li>
+        <li><a class="block p-2 rounded hover:bg-brand-mint" href="#faq">FAQs</a></li>
+        <li><a class="block p-2 rounded hover:bg-brand-mint" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero (information‑first) -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-white via-brand-mint to-white"></div>
+    <div class="absolute inset-0 -z-10 bg-hero"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 items-center gap-10">
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-emerald-900">Farm to Home, <span class="text-brand-primary">Every Morning</span></h1>
+        <p class="mt-4 text-lg text-slate-700 max-w-2xl">We’re a <strong>17‑acre farm</strong> with cows & buffaloes. Today, we focus on <strong>toned</strong> and <strong>full‑cream milk</strong>. Subscriptions and orders are managed in our mobile app.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#about" class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border border-emerald-200 bg-white hover:bg-emerald-50">About Aroha Fresh</a>
+          <a href="#app" class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-slate-900 text-white opacity-70 cursor-not-allowed" title="App coming soon">Get the App</a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+          <div class="bg-white/80 backdrop-blur border border-emerald-100 rounded-xl p-3 text-center"><div class="text-2xl">🥛</div><div class="font-semibold">100% Pure</div></div>
+          <div class="bg-white/80 backdrop-blur border border-emerald-100 rounded-xl p-3 text-center"><div class="text-2xl">🧪</div><div class="font-semibold">Batch‑tested</div></div>
+          <div class="bg-white/80 backdrop-blur border border-emerald-100 rounded-xl p-3 text-center"><div class="text-2xl">🧊</div><div class="font-semibold">Chilled Chain</div></div>
+          <div class="bg-white/80 backdrop-blur border border-emerald-100 rounded-xl p-3 text-center"><div class="text-2xl">🌿</div><div class="font-semibold">Hormone‑free</div></div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -top-10 -left-10 w-56 h-56 bg-brand-primary/10 blur-3xl rounded-full"></div>
+        <img src="https://images.unsplash.com/photo-1659148566517-9dfe52f802ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Aroha Fresh dairy farm" class="relative rounded-3xl shadow-xl border border-white w-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 items-start">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-bold text-emerald-900">About Aroha Fresh</h2>
+        <p class="mt-4 text-slate-700">Aroha Fresh began with a simple promise: <em>Pure • Fresh • Natural</em>. On our 17‑acre farm, we raise cows and buffaloes with care, maintain clean sheds, and follow responsible farming. Our hens and flower plots enrich farm biodiversity and soil health.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="p-5 border border-emerald-100 rounded-2xl"><div class="font-semibold">Mission</div><p class="text-slate-600 mt-1">Deliver uncompromised nutrition from transparent, traceable farms.</p></div>
+          <div class="p-5 border border-emerald-100 rounded-2xl"><div class="font-semibold">Promise</div><p class="text-slate-600 mt-1">No adulterants. Chilled chain. Early‑morning delivery.</p></div>
+        </div>
+      </div>
+      <aside id="farm" class="bg-brand-mint rounded-2xl p-6 border border-emerald-100">
+        <h3 class="text-xl font-semibold">Farm at a glance</h3>
+        <ul class="mt-4 space-y-3 text-slate-700">
+          <li>🌾 17 acres — mixed fodder & flower plots</li>
+          <li>🐄 Dairy herd — cows & buffaloes</li>
+          <li>🐔 Poultry — hens for natural ecosystem balance</li>
+          <li>🚚 Morning dispatch — doorstep by 6:00 AM</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Milk (current focus) -->
+  <section id="milk" class="py-16 bg-gradient-to-b from-white to-brand-mint/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-8">
+        <h2 class="text-3xl font-bold text-emerald-900">Today’s Offering: Milk</h2>
+        <p class="text-sm text-slate-600">Subscriptions & delivery managed in our app</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <article class="group bg-white rounded-2xl p-6 border border-emerald-100 hover:shadow-md transition">
+          <header class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold">Toned Milk</h3>
+            <span class="text-xs px-2 py-1 rounded bg-brand-mint border border-emerald-100">Daily</span>
+          </header>
+          <p class="mt-2 text-slate-600">Balanced nutrition for everyday use. Homogenized & pasteurized with strict cold‑chain.</p>
+        </article>
+        <article class="group bg-white rounded-2xl p-6 border border-emerald-100 hover:shadow-md transition">
+          <header class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold">Full‑Cream Milk</h3>
+            <span class="text-xs px-2 py-1 rounded bg-brand-mint border border-emerald-100">Rich</span>
+          </header>
+          <p class="mt-2 text-slate-600">Creamy taste and higher fat content for tea, coffee, and desserts.</p>
+        </article>
+      </div>
+
+      <div class="mt-10 grid lg:grid-cols-4 sm:grid-cols-2 gap-4 text-sm">
+        <div class="bg-white border border-emerald-100 rounded-xl p-4 text-center"><div class="text-2xl">🧴</div><div class="font-semibold">Hygienic handling</div></div>
+        <div class="bg-white border border-emerald-100 rounded-xl p-4 text-center"><div class="text-2xl">🧊</div><div class="font-semibold">Chilled chain</div></div>
+        <div class="bg-white border border-emerald-100 rounded-xl p-4 text-center"><div class="text-2xl">🧪</div><div class="font-semibold">Each batch tested</div></div>
+        <div class="bg-white border border-emerald-100 rounded-xl p-4 text-center"><div class="text-2xl">🚪</div><div class="font-semibold">Doorstep by 6 AM</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process / Quality -->
+  <section id="process" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-emerald-900 text-center">Our Quality Process</h2>
+      <div class="mt-10 grid md:grid-cols-5 gap-4">
+        <div class="p-5 border border-emerald-100 rounded-2xl text-center"><div class="text-3xl">🕗</div><div class="font-semibold mt-2">Scheduled milking</div></div>
+        <div class="p-5 border border-emerald-100 rounded-2xl text-center"><div class="text-3xl">❄️</div><div class="font-semibold mt-2">Instant chilling</div></div>
+        <div class="p-5 border border-emerald-100 rounded-2xl text-center"><div class="text-3xl">🧪</div><div class="font-semibold mt-2">Lab tests</div></div>
+        <div class="p-5 border border-emerald-100 rounded-2xl text-center"><div class="text-3xl">🔒</div><div class="font-semibold mt-2">Sealed storage</div></div>
+        <div class="p-5 border border-emerald-100 rounded-2xl text-center"><div class="text-3xl">🚚</div><div class="font-semibold mt-2">Early dispatch</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap (future scale) -->
+  <section id="roadmap" class="py-16 bg-gradient-to-b from-white to-brand-mint/60 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-200 bg-white/70 text-emerald-900 text-xs">🗺️ Roadmap</span>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-emerald-900">What’s Next</h2>
+        <p class="mt-2 text-slate-700">Planned releases and scale-up milestones</p>
+      </div>
+
+      <div class="relative mt-10">
+        <!-- connector line on large screens -->
+        <div class="hidden lg:block absolute left-0 right-0 top-7 border-t border-emerald-100"></div>
+
+        <div class="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="group relative bg-white/80 backdrop-blur border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+            <!-- step dot for lg -->
+            <div class="hidden lg:block absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-emerald-200"></div>
+            <div class="flex items-start gap-3">
+              <div class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-xl bg-brand-primary/10 text-xl">🚀</div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <h3 class="font-semibold">Near‑term (0–3 months)</h3>
+                  <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900">In progress</span>
+                </div>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Curd & Paneer batches</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Ghee (bilona)</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Android & iOS app</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="group relative bg-white/80 backdrop-blur border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+            <div class="hidden lg:block absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-emerald-200"></div>
+            <div class="flex items-start gap-3">
+              <div class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-xl bg-brand-primary/10 text-xl">📦</div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <h3 class="font-semibold">Mid‑term (3–9 months)</h3>
+                  <span class="text-[11px] px-2 py-0.5 rounded-full bg-white border border-emerald-200 text-slate-600">Planned</span>
+                </div>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">A2 line (limited)</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Flavoured milk trials</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Cold‑chain expansion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="group relative bg-white/80 backdrop-blur border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
+            <div class="hidden lg:block absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-emerald-200"></div>
+            <div class="flex items-start gap-3">
+              <div class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-xl bg-brand-primary/10 text-xl">🌱</div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <h3 class="font-semibold">Farm produce</h3>
+                  <span class="text-[11px] px-2 py-0.5 rounded-full bg-white border border-emerald-200 text-slate-600">Exploring</span>
+                </div>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Fresh flowers (seasonal)</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Value‑added dairy range</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-100">Farm visits & education</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App CTA (info only) -->
+  <section id="app" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <!-- Phone mock / preview -->
+        <div class="order-last lg:order-first">
+          <div class="mx-auto w-64 sm:w-72">
+            <div class="relative aspect-[9/19] rounded-[2rem] border border-emerald-100 bg-white shadow-xl overflow-hidden">
+              <!-- notch -->
+              <div class="absolute left-1/2 -translate-x-1/2 top-2 h-4 w-24 rounded-full bg-slate-200"></div>
+              <!-- header bar -->
+              <div class="h-14 bg-gradient-to-r from-brand-mint to-white border-b border-emerald-100 flex items-center px-5">
+                <div class="text-sm font-semibold text-emerald-900">Aroha Fresh</div>
+              </div>
+              <!-- content skeleton -->
+              <div class="p-4 space-y-3">
+                <div class="rounded-xl border border-emerald-100 bg-brand-mint p-3">
+                  <div class="text-[11px] text-emerald-900/80">Subscription</div>
+                  <div class="mt-1 h-3 w-24 bg-emerald-100 rounded"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="rounded-xl border border-emerald-100 p-3">
+                    <div class="h-3 w-20 bg-slate-200 rounded"></div>
+                    <div class="mt-2 h-2 w-16 bg-slate-100 rounded"></div>
+                  </div>
+                  <div class="rounded-xl border border-emerald-100 p-3">
+                    <div class="h-3 w-20 bg-slate-200 rounded"></div>
+                    <div class="mt-2 h-2 w-16 bg-slate-100 rounded"></div>
+                  </div>
+                </div>
+                <div class="rounded-xl border border-emerald-100 p-3 flex items-center justify-between">
+                  <div>
+                    <div class="h-3 w-24 bg-slate-200 rounded"></div>
+                    <div class="mt-2 h-2 w-16 bg-slate-100 rounded"></div>
+                  </div>
+                  <div class="px-3 py-1 rounded-full bg-brand-primary text-white text-xs">Order</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copy + actions -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-200 bg-brand-mint text-emerald-900 text-xs">📱 App • Coming Soon</div>
+          <h2 class="mt-3 text-3xl font-bold text-emerald-900">Aroha Fresh App</h2>
+          <p class="mt-3 text-slate-700">Manage subscriptions, pause/resume deliveries, update addresses, and track your morning drop — all in one place.</p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+            <li class="flex items-center gap-2"><span>✅</span> One‑tap reorders</li>
+            <li class="flex items-center gap-2"><span>✅</span> Pause/Resume anytime</li>
+            <li class="flex items-center gap-2"><span>✅</span> Address & slots</li>
+            <li class="flex items-center gap-2"><span>✅</span> Live delivery status</li>
+          </ul>
+
+          <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <a class="px-5 py-3 rounded-2xl bg-slate-900 text-white opacity-70 cursor-not-allowed" title="Coming soon">Google Play</a>
+            <a class="px-5 py-3 rounded-2xl bg-slate-900 text-white opacity-70 cursor-not-allowed" title="Coming soon">App Store</a>
+          </div>
+          <div class="mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <a href="https://wa.me/910000000000?text=Hi%20Aroha%20Fresh%2C%20I%20want%20to%20place%20an%20order" target="_blank" class="px-5 py-3 rounded-2xl bg-brand-primary text-white shadow-soft">Order via WhatsApp</a>
+            <a href="tel:+910000000000" class="px-5 py-3 rounded-2xl border border-emerald-200">Call to Order</a>
+          </div>
+          <p class="mt-3 text-xs text-slate-600">App in active development. Until release, order via WhatsApp or call and our team will manage it for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-emerald-900 text-center">FAQs</h2>
+      <div class="mt-8 divide-y divide-emerald-100 border border-emerald-100 rounded-2xl bg-brand-mint">
+        <details class="group p-5">
+          <summary class="font-semibold cursor-pointer list-none">Do you take orders on this website?</summary>
+          <p class="mt-2 text-slate-700">No. Ordering and subscriptions are handled in the Aroha Fresh mobile app.</p>
+        </details>
+        <details class="group p-5">
+          <summary class="font-semibold cursor-pointer list-none">Which milk variants are available now?</summary>
+          <p class="mt-2 text-slate-700">Toned and full‑cream milk. More dairy products will be added soon.</p>
+        </details>
+        <details class="group p-5">
+          <summary class="font-semibold cursor-pointer list-none">What time do you deliver?</summary>
+          <p class="mt-2 text-slate-700">Deliveries are scheduled to reach your doorstep by 6:00 AM.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-gradient-to-b from-white to-brand-mint/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-emerald-900">Get in touch</h2>
+        <p class="mt-3 text-slate-700">Partnerships, supply, or media enquiries.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <a href="tel:+910000000000" class="block p-4 bg-white border border-emerald-100 rounded-2xl">📞 +91 00000 00000</a>
+          <a href="mailto:hello@arohafresh.in" class="block p-4 bg-white border border-emerald-100 rounded-2xl">✉️ hello@arohafresh.in</a>
+          <div class="block p-4 bg-white border border-emerald-100 rounded-2xl">🕘 5:00 AM – 9:00 PM</div>
+          <div class="block p-4 bg-white border border-emerald-100 rounded-2xl">📍 Hyderabad region (initial)</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl border border-emerald-100 p-6 shadow-soft">
+        <h3 class="text-xl font-semibold">Quick message</h3>
+        <form class="mt-4 grid gap-3" action="mailto:hello@arohafresh.in" method="post" enctype="text/plain">
+          <input class="border border-emerald-200 rounded-xl p-3" placeholder="Your Name" name="name" />
+          <input class="border border-emerald-200 rounded-xl p-3" placeholder="Email or Phone" name="contact" />
+          <textarea class="border border-emerald-200 rounded-xl p-3 min-h-[120px]" placeholder="How can we help?" name="message"></textarea>
+          <button class="bg-brand-primary hover:bg-emerald-600 text-white rounded-xl p-3 w-full">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-emerald-950 text-emerald-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div>
+        <div class="text-lg font-semibold">Aroha Fresh</div>
+        <p class="mt-2 text-sm text-emerald-200">Pure • Fresh • Natural</p>
+        <p class="mt-4 text-xs text-emerald-300">© <span id="year"></span> Aroha Fresh. All rights reserved.</p>
+      </div>
+      <div>
+        <div class="font-semibold mb-2">Company</div>
+        <ul class="space-y-2 text-emerald-200 text-sm">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+          <li><a href="#faq" class="hover:underline">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold mb-2">Focus</div>
+        <ul class="space-y-2 text-emerald-200 text-sm">
+          <li>Milk (Toned / Full‑cream)</li>
+          <li>Quality & Traceability</li>
+          <li>Cold‑Chain Logistics</li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold mb-2">Follow</div>
+        <ul class="space-y-2 text-emerald-200 text-sm">
+          <li><a href="#" class="hover:underline">Instagram</a></li>
+          <li><a href="#" class="hover:underline">Facebook</a></li>
+          <li><a href="#" class="hover:underline">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating temporary order CTA -->
+  <!-- <a href=\"https://wa.me/910000000000?text=Hi%20Aroha%20Fresh%2C%20I%20want%20to%20place%20an%20order\" target=\"_blank\" class=\"fixed bottom-5 right-5 bg-brand-primary text-white px-4 py-3 rounded-2xl shadow-soft\">Order via WhatsApp<\/a> -->
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- JSON‑LD: Organization/Brand -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aroha Fresh",
+    "url": "https://www.arohafresh.in/",
+    "logo": "https://www.arohafresh.in/assets/logo.png",
+    "sameAs": ["https://instagram.com/arohafresh", "https://facebook.com/arohafresh"],
+    "description": "A 17‑acre farm delivering pure, fresh milk by 6:00 AM. Ordering via the Aroha Fresh app.",
+    "brand": {"@type":"Brand","name":"Aroha Fresh"}
+  }
+  </script>
+</body>
+</html>
